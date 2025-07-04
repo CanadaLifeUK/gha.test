@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="Code Coverage" uri="datacollector://Microsoft/CodeCoverage/2.0" assemblyQualifiedName="Microsoft.VisualStudio.Coverage.DynamicCoverageDataCollector, Microsoft.VisualStudio.TraceCollector, Culture=neutral">
+        <Configuration>
+          <CodeCoverage>
+            <!-- Match assembly file paths: -->
+            <ModulePaths>
+              <Exclude>
+                <ModulePath>.*automapper.dll</ModulePath>
+                <ModulePath>.*fluentvalidation.dll</ModulePath>
+                <ModulePath>.*fluentvalidation.aspnetcore.dll</ModulePath>
+                <ModulePath>.*fluentvalidation.dependencyinjectionextensions.dll</ModulePath>
+                <ModulePath>.*moq.dll</ModulePath>
+                <ModulePath>.*nunit.framework.dll</ModulePath>
+                <ModulePath>.*nunit3.testadapter.dll</ModulePath>
+                <ModulePath>.*refit.dll</ModulePath>
+                <ModulePath>.*refit.httpclientfactory.dll</ModulePath>
+                <ModulePath>.*serilog.dll</ModulePath>
+                <ModulePath>.*tests.dll</ModulePath>
+              </Exclude>
+            </ModulePaths>
+            <Functions>
+              <Exclude>
+                <Function>.*Startup\.*</Function>
+                <Function>.*Program\.*</Function>
+              </Exclude>
+            </Functions>
+          </CodeCoverage>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

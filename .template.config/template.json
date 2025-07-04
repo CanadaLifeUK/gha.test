@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Canada Life",
+  "classifications": [ "CL", "Canada Life", "Skeleton" ],
+  "identity": "CLUK.API.SkeletonTemplate.CSharp",
+  "name": "Canada Life Web API Skeleton Template",
+  "shortName": "apiskeleton",
+  "sourceName": "Skeleton",
+  "preferNameDirectory": "true",
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [ ".git/**", "README.md" ]
+        }
+      ]
+    }
+  ],
+  "symbols": {
+    "port": {
+      "type": "parameter",
+      "replaces": "{port}",
+      "defaultValue": "9999"
+    }
+  }
+}

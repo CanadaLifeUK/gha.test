@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="C:\Users\BIX395\.nuget\packages\microsoft.testplatform.testhost\17.12.0\build\netcoreapp3.1\x64\testhost.dll" />
+    <Content Remove="C:\Users\BIX395\.nuget\packages\microsoft.testplatform.testhost\17.12.0\build\netcoreapp3.1\x64\testhost.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\BIX395\.nuget\packages\xunit.runner.visualstudio\3.0.1\build\net6.0\xunit.abstractions.dll" />
+    <None Remove="C:\Users\BIX395\.nuget\packages\xunit.runner.visualstudio\3.0.1\build\net6.0\xunit.runner.visualstudio.testadapter.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="35.6.2" />
+    <PackageReference Include="coverlet.collector" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="FluentAssertions" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="System.Text.Json" Version="9.0.2" />
+    <PackageReference Include="Testcontainers.MsSql" Version="4.2.0" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CLUK.Skeleton.API\CLUK.Skeleton.API.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

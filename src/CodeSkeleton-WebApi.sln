@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D825C514-4024-403F-B9BA-CA106CCC8346}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.runsettings = .runsettings
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLUK.Skeleton.API", "CLUK.Skeleton.API\CLUK.Skeleton.API.csproj", "{ADA64001-4156-4086-A447-101191EB5A92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLUK.Skeleton.API.Tests", "CLUK.Skeleton.API.Tests\CLUK.Skeleton.API.Tests.csproj", "{5873C3A4-DE89-18A5-BD75-623AA4D6F5B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADA64001-4156-4086-A447-101191EB5A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA64001-4156-4086-A447-101191EB5A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA64001-4156-4086-A447-101191EB5A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA64001-4156-4086-A447-101191EB5A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5873C3A4-DE89-18A5-BD75-623AA4D6F5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5873C3A4-DE89-18A5-BD75-623AA4D6F5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5873C3A4-DE89-18A5-BD75-623AA4D6F5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5873C3A4-DE89-18A5-BD75-623AA4D6F5B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21E5A871-AF4E-4553-A35A-56F28B495AD1}
+	EndGlobalSection
+EndGlobal

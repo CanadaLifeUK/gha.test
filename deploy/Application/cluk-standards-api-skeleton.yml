@@ -1,0 +1,35 @@
+# Octopus channels like Semantic Versioning syntax - and it uses it when evaluating package.
+# The package version uses {Build.BuildNumber} which is the build number from the pipeline. The default is date-based, but 
+# here we change it to Major.Minor.Patch. The Major.Minor is set in the variables section, and the Patch is a counter.
+name: $(Versioning.MajorMinor).$(Versioning.Patch)
+
+trigger:
+  batch: 'false'
+  branches:
+    include:
+    - main
+
+resources:
+  repositories:
+  - repository: Pipelines
+    type: git
+    name: Standards/_git/Pipelines
+    ref: refs/heads/main
+
+variables:
+- group: Standards-Pipeline-Deploy
+- name: Versioning.MajorMinor
+  value: 1.0
+- name: Versioning.Patch
+  value: $[counter(variables['Version.MajorMinor'], 0)]
+
+stages:
+  - template: cluk-ado-pipelines-api.yml@Pipelines
+    parameters:
+      productTeam: 'Sandbox'
+      projectName: 'CLUK.Skeleton.API'
+      landingFolderPath: './Deploy'
+      apiKey: $(octopusApiKey)
+      Nuget_CustomFeedPassword: $(Nuget_CustomFeedPassword)
+      dotNetVersion: '9.0'
+      baseImageTag: '9.0'
