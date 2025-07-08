@@ -1,17 +1,22 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
 name: dotnet Build, Test and Publish
+
+run-name: "commit: ${{ github.sha }}" # name for the workflow run, using the commit SHA to identify the specific commit triggering the workflow.
 
 on:
   push:
-    branches: [ "feature/*" ]
+    branches: [ "feature/*" ] # The workflow will run whenever a `push` event occurs on the `feature/*` branch.  
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main" ] # The workflow will also run whenever a `pull_request` event targets the `main` branch.  
 
 permissions:
-  contents: write
+  contents: write # grants access to the repo contents and to checkout this repo
 
 defaults:
   run:
-    shell: pwsh
+    shell: pwsh # Set the default shell to PowerShell for all run steps in the workflow.
 
 jobs:
   build:
@@ -39,4 +44,3 @@ jobs:
 
     - name: Publish
       run: dotnet publish --no-build --output ./publish
-# test
