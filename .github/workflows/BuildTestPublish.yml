@@ -30,7 +30,7 @@ jobs:
         dotnet-version: 9.0.x
         
     - name: Restore dependencies
-      run: dotnet restore src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj
+      run: dotnet restore src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configfile src/CLUK.Skeleton.API/NuGet.Config
       
     - name: Build
       run: dotnet build --no-restore
