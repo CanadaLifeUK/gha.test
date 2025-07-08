@@ -39,3 +39,4 @@ jobs:
 
     - name: Publish
       run: dotnet publish --no-build --output ./publish
+# test
