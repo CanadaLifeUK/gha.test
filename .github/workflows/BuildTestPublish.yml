@@ -29,11 +29,11 @@ jobs:
       with:
         dotnet-version: 9.0.x
 
-    - name: Replace NuGet feed password
+    - name: Replace Nuget_CustomFeedPassword
       run: |
         sed -i 's|%Nuget_CustomFeedPassword%|${{ secrets.AZURE_DEVOPS_PAT }}|g' src/CLUK.Skeleton.API/NuGet.Config
 
-    - name: Restore dependencies
+    - name: Restore Packages
       run: dotnet restore src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configfile src/CLUK.Skeleton.API/NuGet.Config
 
 #    # tests not working.
@@ -41,4 +41,4 @@ jobs:
 #      run: dotnet test src/CLUK.Skeleton.API.Tests/CLUK.Skeleton.API.Tests.csproj --no-build --verbosity normal
 
     - name: Publish
-      run: dotnet publish --no-build --output ./publish
+      run: dotnet publish src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --no-build --configuration Release --output ./publish
