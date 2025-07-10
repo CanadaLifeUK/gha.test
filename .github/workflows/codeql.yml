@@ -12,12 +12,10 @@
 name: "CodeQL Advanced"
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  schedule:
-    - cron: '19 0 * * 0'
+  workflow_run:
+    workflows: [dotnet Build, Test and Publish] # Name of the triggering workflow
+    types:
+      - completed # Trigger when the workflow completes successfully
 
 jobs:
   analyze:
@@ -58,7 +56,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
     # Add any setup steps before running the `github/codeql-action/init` action.
     # This includes steps like installing compilers or runtimes (`actions/setup-node`
     # or others). This is typically only required for manual builds.
