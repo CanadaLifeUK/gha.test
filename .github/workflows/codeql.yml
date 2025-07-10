@@ -9,7 +9,7 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: "CodeQL Advanced"
+name: "CodeQL (PreMerge_Validation)"
 
 run-name: "commit: ${{ github.sha }}" # name for the workflow run, using the commit SHA to identify the specific commit triggering the workflow.
 
