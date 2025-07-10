@@ -13,11 +13,14 @@ name: "CodeQL (PreMerge_Validation)"
 
 run-name: "commit: ${{ github.sha }}" # name for the workflow run, using the commit SHA to identify the specific commit triggering the workflow.
 
+#on:
+#  workflow_run:
+#    workflows: [Build, Test and Publish (PreMerge_Validation)] # Name of the triggering workflow
+#    types:
+#      - completed # Trigger when the workflow completes successfully
+
 on:
-  workflow_run:
-    workflows: [Build, Test and Publish (PreMerge_Validation)] # Name of the triggering workflow
-    types:
-      - completed # Trigger when the workflow completes successfully
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
   analyze:
