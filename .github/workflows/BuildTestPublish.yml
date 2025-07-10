@@ -77,4 +77,4 @@ jobs:
 #          -H "Authorization: Bearer ${{ secrets.WORKFLOW_TRIGGER_PAT }}" \
 #          -H "Accept: application/vnd.github.v3+json" \
 #          https://api.github.com/repos/CanadaLifeUK/gha.test/actions/workflows/codeql.yml/dispatches \
-#          -d '{"ref":"main"}'  
+#          -d '{"ref":"main"}'
