@@ -44,9 +44,21 @@ jobs:
       run: dotnet publish src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configuration Release --output ./publish
 
     - name: Trigger CodeQL Workflow
+      shell: pwsh
       run: |
-        curl -X POST \
-          -H "Authorization: Bearer ${{ secrets.WORKFLOW_TRIGGER_PAT }}" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/CanadaLifeUK/gha.test/actions/workflows/codeql.yml/dispatches \
-          -d '{"ref":"main"}'
+        $headers = @{
+          Authorization = "Bearer ${{ secrets.WORKFLOW_TRIGGER_PAT }}"
+          Accept = "application/vnd.github.v3+json"
+        }
+        $body = @{
+          ref = "main"
+        } | ConvertTo-Json -Depth 10
+        Invoke-RestMethod -Uri "https://api.github.com/repos/CanadaLifeUK/gha.test/actions/workflows/codeql.yml/dispatches" -Method Post -Headers $headers -Body $body
+        
+#    - name: Trigger CodeQL Workflow
+#      run: |
+#        curl -X POST \
+#          -H "Authorization: Bearer ${{ secrets.WORKFLOW_TRIGGER_PAT }}" \
+#          -H "Accept: application/vnd.github.v3+json" \
+#          https://api.github.com/repos/CanadaLifeUK/gha.test/actions/workflows/codeql.yml/dispatches \
+#          -d '{"ref":"main"}'
