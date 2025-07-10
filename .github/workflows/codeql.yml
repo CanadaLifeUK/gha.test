@@ -15,7 +15,7 @@ run-name: "commit: ${{ github.sha }}" # name for the workflow run, using the com
 
 on:
   workflow_run:
-    workflows: [dotnet Build, Test and Publish] # Name of the triggering workflow
+    workflows: [Build, Test and Publish (PreMerge_Validation)] # Name of the triggering workflow
     types:
       - completed # Trigger when the workflow completes successfully
 
