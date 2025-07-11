@@ -43,6 +43,8 @@ jobs:
     - name: Publish
       run: dotnet publish src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configuration Release --output ./publish
 
+      # test codeql trigger
+      
  #   - name: Debug API Call
  #     shell: pwsh
  #     run: |
