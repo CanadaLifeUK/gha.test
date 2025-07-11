@@ -43,22 +43,22 @@ jobs:
     - name: Publish
       run: dotnet publish src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configuration Release --output ./publish
 
-    - name: Debug API Call
-      shell: pwsh
-      run: |
-        Write-Host "Triggering CodeQL Workflow..."
-        $headers = @{
-          Authorization = "Bearer ${{ secrets.WORKFLOW_TRIGGER_PAT }}"
-          Accept = "application/vnd.github.v3+json"
-          "X-GitHub-Api-Version" = "2022-11-28"          
-        }
-        $body = @{
-          ref = "main"
-        } | ConvertTo-Json -Depth 10
-        Write-Host "Headers: $($headers | Out-String)"
-        Write-Host "Body: $($body | Out-String)"
-        Write-Host "URL: https://api.github.com/repos/CanadaLifeUK/gha.test/actions/workflows/173741508/dispatches"
-        Invoke-RestMethod -Uri "https://api.github.com/repos/CanadaLifeUK/gha.test/actions/workflows/173741508/dispatches" -Method Post -Headers $headers -Body $body
+ #   - name: Debug API Call
+ #     shell: pwsh
+ #     run: |
+ #       Write-Host "Triggering CodeQL Workflow..."
+ #       $headers = @{
+ #         Authorization = "Bearer ${{ secrets.WORKFLOW_TRIGGER_PAT }}"
+ #         Accept = "application/vnd.github.v3+json"
+ #         "X-GitHub-Api-Version" = "2022-11-28"          
+ #       }
+ #       $body = @{
+ #         ref = "main"
+ #       } | ConvertTo-Json -Depth 10
+ #       Write-Host "Headers: $($headers | Out-String)"
+ #       Write-Host "Body: $($body | Out-String)"
+ #       Write-Host "URL: https://api.github.com/repos/CanadaLifeUK/gha.test/actions/workflows/173741508/dispatches"
+ #       Invoke-RestMethod -Uri "https://api.github.com/repos/CanadaLifeUK/gha.test/actions/workflows/173741508/dispatches" -Method Post -Headers $headers -Body $body
 
     - name: Trigger CodeQL Workflow
       shell: pwsh
