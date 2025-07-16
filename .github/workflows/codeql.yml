@@ -68,10 +68,10 @@ jobs:
     #   uses: actions/setup-example@v1
 
     # Introduce a vulnerability for testing purposes
-    - name: Introduce Vulnerability
-      run: |
-        echo "Hardcoded password detected"
-        echo "public class VulnerableClass { public static string Password = \"12345\"; }" >> src/CLUK.Skeleton.API/VulnerableClass.cs
+#    - name: Introduce Vulnerability
+#      run: |
+#        echo "Hardcoded password detected"
+#        echo "public class VulnerableClass { public static string Password = \"12345\"; }" >> src/CLUK.Skeleton.API/VulnerableClass.cs
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
