@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget" 
+    directory: "/src/CLUK.Skeleton.API" # Path to the project directory
+    schedule:
+      interval: "daily" # Frequency of updates (daily, weekly, etc.)
+  - package-ecosystem: "nuget"
+    directory: "/src/CLUK.Skeleton.API.Tests" # Path to the test project directory
+    schedule:
+      interval: "daily"
