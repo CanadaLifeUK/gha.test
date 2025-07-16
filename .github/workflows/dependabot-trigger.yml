@@ -1,0 +1,18 @@
+name: Dependabot Updates
+
+on:
+  workflow_dispatch: # Allows manual triggering of Dependabot updates
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Trigger Dependabot
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Update dependencies via Dependabot"
+        branch: dependabot-updates
