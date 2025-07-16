@@ -37,8 +37,11 @@ jobs:
       run: dotnet restore src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configfile src/CLUK.Skeleton.API/NuGet.Config
 
 #    # fix the tests
+#    - name: Execute Discovered Test Projects
+#      run: dotnet test src/CLUK.Skeleton.API.Tests/CLUK.Skeleton.API.Tests.csproj --no-build --verbosity normal
+      
     - name: Execute Discovered Test Projects
-      run: dotnet test src/CLUK.Skeleton.API.Tests/CLUK.Skeleton.API.Tests.csproj --no-build --verbosity normal
+      run: dotnet test src/CLUK.Skeleton.API.Tests/CLUK.Skeleton.API.Tests.csproj
 
     - name: Publish
       run: dotnet publish src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configuration Release --output ./publish
