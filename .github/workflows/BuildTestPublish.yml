@@ -4,7 +4,7 @@
 name: Build, Test and Publish (PreMerge_Validation)
 
 run-name: "commit: ${{ github.sha }}" # name for the workflow run, using the commit SHA to identify the specific commit triggering the workflow.
-
+# this is a test
 on:
   push:
     branches: [ "feature/*" ] # The workflow will run whenever a `push` event occurs on the `feature/*` branch.  
@@ -36,7 +36,7 @@ jobs:
     - name: Restore Packages
       run: dotnet restore src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configfile src/CLUK.Skeleton.API/NuGet.Config
 
-#    # tests not working.
+#    # fix the tests
 #    - name: Execute Discovered Test Projects
 #      run: dotnet test src/CLUK.Skeleton.API.Tests/CLUK.Skeleton.API.Tests.csproj --no-build --verbosity normal
 
