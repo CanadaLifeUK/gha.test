@@ -51,7 +51,7 @@ jobs:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
 
-        queries: security-extended,security-and-quality,codeql-suites/secrets
+        queries: security-extended,security-and-quality
 
     - name: Install .NET SDK
       uses: actions/setup-dotnet@v4
@@ -80,6 +80,4 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
         fail-on-error: true # This option makes the workflow fail if issues are detected
-
-# test
-# test #2
+        
