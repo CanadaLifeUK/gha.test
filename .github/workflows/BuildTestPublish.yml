@@ -1,10 +1,5 @@
 # This workflow will build a .NET project 
 
-# Test workflow
-# Test workflow #2
-# Test workflow #3
-# Test workflow #4
-
 name: Build, Test and Publish (PreMerge_Validation)
 
 # name for the workflow run, using the commit SHA to identify the specific commit triggering the workflow.
