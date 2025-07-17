@@ -1,5 +1,5 @@
-namespace CLUK.Skeleton.API
-{
+namespace CLUK.Skeleton.API;
+
     public class CodeqlTest
     {
         private static string password = "12345";
@@ -17,4 +17,3 @@ namespace CLUK.Skeleton.API
             }
         }
     }
-}
