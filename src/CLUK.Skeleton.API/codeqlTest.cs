@@ -1,3 +1,20 @@
-public class VulnerableClass {
-    public static string Password = "12345"; // Hardcoded password
+namespace CLUK.Skeleton.API
+{
+    public class CodeqlTest
+    {
+        private static string password = "12345"; // Hardcoded password 
+
+        public static string Password 
+        {
+            get { return password; }
+        }
+
+        public void ExampleMethod()
+        {
+            if (password == "12345")
+            {
+                // 
+            }
+        }
+    }
 }
