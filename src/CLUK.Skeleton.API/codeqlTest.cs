@@ -2,9 +2,9 @@ namespace CLUK.Skeleton.API
 {
     public class CodeqlTest
     {
-        private static string password = "12345"; // Hardcoded password 
+        private static string password = "12345";
 
-        public static string Password 
+        public static string Password
         {
             get { return password; }
         }
@@ -13,7 +13,7 @@ namespace CLUK.Skeleton.API
         {
             if (password == "12345")
             {
-                // 
+                // add code here
             }
         }
     }
