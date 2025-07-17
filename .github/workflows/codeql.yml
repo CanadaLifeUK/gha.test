@@ -89,8 +89,8 @@ jobs:
         # Prefix the list here with "+" to use these queries and those in the config file.
 
         # For more details on CodeQL's query packs, refer to: https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
-        queries: security-extended,security-and-quality
-
+        queries: security-extended,security-and-quality,codeql-suites/secrets
+  
     - name: Replace Nuget_CustomFeedPassword
       run: |
         sed -i 's|%Nuget_CustomFeedPassword%|${{ secrets.AZURE_DEVOPS_PAT }}|g' src/CLUK.Skeleton.API/NuGet.Config
