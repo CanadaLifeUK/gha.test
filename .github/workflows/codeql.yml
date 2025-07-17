@@ -53,6 +53,13 @@ jobs:
 
         queries: security-extended,security-and-quality
 
+    - name: Replace Nuget_CustomFeedPassword
+      run: |
+        sed -i 's|%Nuget_CustomFeedPassword%|${{ secrets.AZURE_DEVOPS_PAT }}|g' src/CLUK.Skeleton.API/NuGet.Config
+
+    - name: Restore Packages
+      run: dotnet restore src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configfile src/CLUK.Skeleton.API/NuGet.Config
+
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
