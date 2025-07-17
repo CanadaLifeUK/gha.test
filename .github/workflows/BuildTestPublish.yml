@@ -45,4 +45,4 @@ jobs:
 
     - name: Publish
       run: dotnet publish src/CLUK.Skeleton.API/CLUK.Skeleton.API.csproj --configuration Release --output ./publish
-      
+       
