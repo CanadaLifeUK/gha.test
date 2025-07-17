@@ -1,19 +1,19 @@
 namespace CLUK.Skeleton.API;
 
-public class CodeqlTest
-{
-    private static string password = "12345";
-
-    public static string Password
+    public class CodeqlTest
     {
-        get { return password; }
-    }
+        private static string password = "12345";
 
-    public void ExampleMethod()
-    {
-        if (password == "12345")
+        public static string Password
         {
-            // add code here
+            get { return password; }
+        }
+
+        public void ExampleMethod()
+        {
+            if (password == "12345")
+            {
+                // add code here
+            }
         }
     }
-}
