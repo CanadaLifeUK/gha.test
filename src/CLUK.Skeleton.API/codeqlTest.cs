@@ -18,4 +18,3 @@ namespace CLUK.Skeleton.API
         }
     }
 }
- 
